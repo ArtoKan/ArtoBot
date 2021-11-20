@@ -26,7 +26,7 @@ Client.on("ready", () => {
     }, 14000)
 });
 
-Client.login(process.env.TOKEN);
+Client.login("Process.env.TOKEN");
 
 Client.on("messageCreate", message => {
     if (message.author.bot) return;
@@ -74,20 +74,12 @@ Client.on("messageCreate", message => {
         message.reply("*...pong*");
     }
 
-    //Custom Status
-    Client.on("ready", () => {
-        function randomStatus() {
-            let status = ["OMG CE STATUT DE OUF", "ABONNE TOI A ARTOKAN"]
-            let rstatus = Math.floor(Math.random() * status.length);
-
-            Client.user.setActivity(status[rstatus], {type: "STREAMING", url: "https://twitch.tv/artokan"});
-        }; setInterval(randomStatus, 2000)
-    });
-
     ///a!cringe
     if(message.content === prefix + "cringe"){
         message.reply("https://tenor.com/view/oh-no-cringe-cringe-oh-no-kimo-kimmo-gif-23168319");
     }
+
+    
 
     else if(message.content.includes("ratio")) {
         message.react('✅')
@@ -112,4 +104,4 @@ Client.on("messageCreate", message => {
     
     
 
-});
+})
