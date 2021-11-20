@@ -26,7 +26,7 @@ Client.on("ready", () => {
     }, 14000)
 });
 
-Client.login("Process.env.TOKEN");
+Client.login("process.env.TOKEN");
 
 Client.on("messageCreate", message => {
     if (message.author.bot) return;
