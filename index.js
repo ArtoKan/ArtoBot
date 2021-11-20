@@ -26,7 +26,7 @@ Client.on("ready", () => {
     }, 14000)
 });
 
-Client.login(process.env.TOKEN);
+Client.login("OTEwMjA0MTk0NTg4MzQ4NDI2.YZPbtg.rqxJ7JsARNJxwYYsA8PxC-ynU-0");
 
 Client.on("messageCreate", message => {
     if (message.author.bot) return;
@@ -62,11 +62,13 @@ Client.on("messageCreate", message => {
         .addField("**__a!help__**", "Affiche la liste des commandes")
         .addField("**__a!ping__**", "Vous renvoie pong... (oui c'est drôle)")
         .addField("**__a!ban__**", "Permet de ban un membre (uniquement réservé aux modérateurs/admin)")
+        .addField("**__a!cringe__**", "Réponds avec le gif Oh No Cringe ")
         .setTimestamp()
         .setFooter("ArtoBot a été entièrement crée par ArtoKan", "https://zupimages.net/up/21/46/f9vi.jpg");
 
         message.channel.send({ embeds: [embed]});
     }
+
     ///a!ping
     else if(message.content === prefix + "ping"){
         message.reply("*...pong*");
@@ -82,15 +84,26 @@ Client.on("messageCreate", message => {
         }; setInterval(randomStatus, 2000)
     });
 
+    ///a!cringe
+    if(message.content === prefix + "cringe"){
+        message.reply("https://tenor.com/view/oh-no-cringe-cringe-oh-no-kimo-kimmo-gif-23168319");
+    }
 
-    if(message.content.includes("ratio")) {
+    else if(message.content.includes("ratio")) {
         message.react('✅')
         message.react('🚫').catch(error => {
          console.log(error)
        });
     }
 
-    if(message.content.includes("flop")) {
+    else if(message.content.includes("oh non")) {
+        message.react('🤡')
+        .catch(error => {
+         console.log(error)
+       });
+    }
+
+    else if(message.content.includes("flop")) {
         message.react('✅')
         message.react('🚫').catch(error => {
          console.log(error)
