@@ -26,7 +26,7 @@ Client.on("ready", () => {
     }, 14000)
 });
 
-Client.login("OTEwMjA0MTk0NTg4MzQ4NDI2.YZPbtg.rqxJ7JsARNJxwYYsA8PxC-ynU-0");
+Client.login(process.env.TOKEN);
 
 Client.on("messageCreate", message => {
     if (message.author.bot) return;
