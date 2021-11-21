@@ -12,7 +12,7 @@ Client.on("ready", () => {
     console.log("Le bot fonctionne bien tia capté")
 
     const arrayOfStatus = [
-        `${Client.guilds.cache.size} serveurs`,
+        `${Client.guilds.cache.size} serveurs` ,
         `Si tu es perdu fait a!help`
     ];
 
@@ -26,7 +26,7 @@ Client.on("ready", () => {
     }, 14000)
 });
 
-Client.login("process.env.TOKEN");
+Client.login(process.env.TOKEN);
 
 Client.on("messageCreate", message => {
     if (message.author.bot) return;
